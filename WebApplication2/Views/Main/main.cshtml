@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "main";
+}
+
+<h2></h2>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+
+
+    <style type="text/css">
+        .auto-style2 {
+            width: 143px;
+        }
+
+        .auto-style6 {
+            width: 161px;
+        }
+
+        .auto-style7 {
+            width: 108px;
+        }
+
+        .auto-style8 {
+            width: 75px;
+        }
+
+        .auto-style9 {
+            width: 114px;
+        }
+
+        .auto-style10 {
+            height: 27px;
+        }
+
+        .auto-style11 {
+            width: 121px;
+        }
+
+        .auto-style12 {
+            width: 105px;
+        }
+
+        .auto-style13 {
+            width: 151px;
+        }
+    </style>
+
+</head>
+<body style="background-color:black">
+
+    <form id="form1" runat="server">
+
+        <div>
+
+            <table style="align-content:center;"class="auto-style1" width:"800" border:"0" cellpadding:"0" align:"center">
+                <tr>
+                    <td>
+                        <img src="~/Image/mas.jpg" style="align-content:center" Width="1259px" Height="253px" margin-right="0px" Font-Bold="True" Font-Size="Medium" ForeColor="Black" />
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="auto-style10">
+
+                        <table>
+                            <tr>
+                                <td class="auto-style8" style="color:black;font:bold">
+                                    @Html.RouteLink("Home", new { action = "HomePage", controller = "Home", area = "Home" })
+
+                                </td>
+                                <td class="auto-style7" style="color:black;font:bold">
+
+                                    @Html.RouteLink("Login", new { action = "Login", controller = "Register", area = "Register" })
+
+                                </td>
+                                <td class="auto-style7"  style="color:black;font:bold">
+
+                                    @Html.RouteLink("Register", new { action = "Register", controller = "Register", area = "Register" })
+
+                                </td>
+                                <td class="auto-style7" style="color:black;font:bold">
+
+                                    @Html.RouteLink("Search", new { action = "Search", controller = "Bookings", area = "Bookings" })
+
+                                </td>
+                                <td class="auto-style7" style="color:black;font:bold">
+
+                                    @Html.RouteLink("Booking", new { action = "booking", controller = "Bookings", area = "Bookings" })
+
+                                </td>
+                                <td class="auto-style6" style="color:black;font:bold">
+                                    @Html.RouteLink("ROOMS & SUITES", new { action = "Rooms", controller = "Home", area = "Home" })
+                                </td>
+                                <td class="auto-style2" style="color:black;font:bold">
+                                    @Html.RouteLink(" FOOD & DINING ", new { action = "Food", controller = "Home", area = "Home" })
+                                </td>
+                                <td class="auto-style9" style="color:black;font:bold">
+                                    @Html.RouteLink("FACILITIES ", new { action = "Facilities", controller = "Home", area = "Home" })
+                                </td>
+                                <td class="auto-style12" style="color:black;font:bold">
+                                    @Html.RouteLink("LOCATION ", new { action = "Location", controller = "Home", area = "Home" })
+                                </td>
+                                <td class="auto-style13">
+                                    @Html.RouteLink(" CONTACT US  ", new { action = "ContactUs", controller = "Home", area = "Home" })
+
+                                </td>
+
+                                <td class="auto-style11">
+                                    <asp:Label ID="welcome" runat="server" Text="Welcome Guest !"></asp:Label>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>
+                        </p>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </form>
+    <p>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+﻿@model WebApplication2.Controllers.MainController
+@{
+    ViewBag.Title = "HomePage";
+
+}
+
+<h2>HomePage</h2>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    #head1 {
+        align-content: center;
+        font-size: 25px;
+    }
+
+    #head2 {
+        font-size: 25px;
+        font-family: Gabriola;
+        height: 42px;
+        width: 269px;
+    }
+
+
+    .auto-style1 {
+        width: 93%;
+        margin-top: 0px;
+    }
+
+    .auto-style2 {
+        width: 665px;
+    }
+
+    .auto-style11 {
+        width: 741px;
+    }
+
+    .auto-style12 {
+        width: 2834px;
+    }
+
+    .auto-style14 {
+        width: 445px;
+    }
+</style>
+
+<p id="head1"></p>
+<form style="width:100%">
+
+    @{
+        Html.RenderPartial("~/Views/Main/main.cshtml");
+    }
+    <b style="font-size:18px; color:black"><u>Welcome To Hotel Luxury</u></b>
+
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-3" style="background-color:lavender;">
+                <p style="font-size: 30px;color:black;"> Arrive To Escape </p>
+
+                <p class="margint2" style="margin: 11.625px 0px 15px;font-size: 16px; padding: 0px;">
+                    Our hotel provides the right blend of service, luxury and quiet efficiency.
+                    It has unparalleled levels of service, and has&nbsp; received innumerable awards and accolades.
+                </p>
+                <p style="margin: 0px 0px 15px; font-size: 16px;padding: 0px;">
+                    A distinctive feature of the hotel is their highly motivated and
+                    well trained staff who provide exceptionally attentive, personalised and warm service. The hotel has established a reputation for redefining the paradigm of luxury and excellence in service amongst leisure hotels around the world.
+                </p>
+                <p style="margin: 0px;font-size: 16px; padding: 0px;">
+                    Our hotel has established a reputation for excellence and is acknowledged for offering quality and value and also combine state of the art facilities with dependable service in a caring environment, presenting the ideal choice for business and leisure travellers.
+                </p>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="container">
+                    
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" style="align-content:center">
+                            <div class="item active">
+                                <img src="~/Image/t2.jpg" style="width:100%;height:7%;">
+                            </div>
+
+                            <div class="item">
+                                <img src="~/Image/t6.jpg" style="width:100%;height:23%;">
+                            </div>
+
+                            <div class="item">
+                                <img src="~/Image/t7.jpg" style="width:100%;height:23%;">
+                            </div>
+                           
+                            <div class="item">
+                                <img src="~/Image/t9.jpg" style="width:100%;height:8%;">
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</form>
