@@ -53,7 +53,7 @@
 </head>
 <body style="background-color:black">
 
-    <form id="form1" runat="server">
+    <form id="form1" >
 
         <div>
 
@@ -85,7 +85,7 @@
                                 </td>
                                 <td class="auto-style7" style="color:black;font:bold">
 
-                                    @Html.RouteLink("Search", new { action = "Search", controller = "Bookings", area = "Bookings" })
+                                    @Html.RouteLink("Search", new { action = "Search1", controller = "Bookings", area = "Bookings" })
 
                                 </td>
                                 <td class="auto-style7" style="color:black;font:bold">
@@ -111,7 +111,7 @@
                                 </td>
 
                                 <td class="auto-style11">
-                                    <asp:Label ID="welcome" runat="server" Text="Welcome Guest !"></asp:Label>
+                                    <asp:Label ID="welcome"  Text="Welcome Guest !"></asp:Label>
                                 </td>
                             </tr>
                         </table>
@@ -123,7 +123,7 @@
                     <td>
                         <p>
                         </p>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" >
                         </asp:ContentPlaceHolder>
                     </td>
                 </tr>

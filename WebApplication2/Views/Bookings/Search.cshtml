@@ -10,10 +10,14 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <p>
+
+    
+
+  
 @using (Html.BeginForm("Search", "Bookings", FormMethod.Get))
 {
     <b> Search by</b> @Html.RadioButton("option", "roomtype", true)<b> roomtype</b>
-    @Html.RadioButton("option", "Email") <b> Email</b><br />
+    @Html.RadioButton("option", "Email") <b> CheckIn</b><br />
     @Html.TextBox("search") <input type="submit" value="Search" />
 }</p>
 <table class="table">

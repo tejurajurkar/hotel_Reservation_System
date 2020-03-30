@@ -20,8 +20,15 @@ namespace WebApplication2.Controllers
             return View(db.bookings.ToList());
         }
 
-
+        [HttpGet]
         public ActionResult booking()
+
+        {
+
+            return View();
+
+        }
+        public ActionResult Payment()
 
         {
 
@@ -36,33 +43,34 @@ namespace WebApplication2.Controllers
 
         {
 
-            if (ModelState.IsValid)
 
+            if (ModelState.IsValid)
             {
+
 
                 using (var context = new ProjectContext())
 
                 {
-
+                   
                     context.bookings.Add(guestResponse);
 
                     context.SaveChanges();
+                    return View("Payment");
 
                 }
-
-                return View("thanks", guestResponse);
-
             }
 
+         
             else
 
             {
 
-                return View();
+                ModelState.AddModelError("", "Data is not correct");
 
             }
 
 
+            return View();
 
         }
 
@@ -87,7 +95,7 @@ namespace WebApplication2.Controllers
 
             {
 
-                return View(db.bookings.Where(x => x.Email.StartsWith(search) || search == null).ToList());
+                return View(db.bookings.Where(x => x.checkin.StartsWith(search) || search == null).ToList());
 
            
 
@@ -95,20 +103,43 @@ namespace WebApplication2.Controllers
 
             //else
 
-            //{
-
-            //    var model = db.bookings.Where(room => room.noofnight == search || search == null).ToList();
-
-            //    return View(model);
-
-            //}
-
-
+       
 
         }
 
 
 
+        public ActionResult Search1(string option, string search)
+
+        {
+
+            if (option == "roomtype")
+
+            {
+
+                return View(db.bookings.Where(x => x.roomtype == search || search == null).ToList());
+
+
+
+
+
+            }
+
+            else
+
+            {
+
+                return View(db.bookings.Where(x => x.checkin.StartsWith(search) || search == null).ToList());
+
+
+
+            }
+
+            //else
+
+
+
+        }
 
 
         // GET: Bookings/Details/5

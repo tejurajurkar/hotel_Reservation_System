@@ -13,6 +13,20 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<style>
+    .btnRegister {
+        float: left;
+        margin-top: 10%;
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        background: #0062cc;
+        color: #fff;
+        font-weight: 600;
+        width: 50%;
+        cursor: pointer;
+    }
+</style>
 
 
 
@@ -42,15 +56,26 @@
                             {
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                 <div class="form-group">
-                                    <label>UserName </label> @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                    <label>Email </label> @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
-                                    <label>Password </label> @Html.PasswordFor(x => x.Pass, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })
+                                    <label>Password </label> @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                 </div>
+                                <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+
+
+  <div class="container" style="background-color:#f1f1f1">
+      <div class="container signin">
+          <p>Not Register Yet? <a href="~/Register/Register">Register here</a>.</p>
+      </div>
+  </div>
                                 <div class="form-group">
-                                    <input type="submit" class="btnRegister" value="Login" />
+                                    <input type="submit" class="btnRegister" value="Sign Up" />
+                                    <input type="submit" onload="back()" onclick="myFunction()" class="btnRegister" value="Sign Out" />
                                 </div>
                             }
                         </div>
@@ -61,5 +86,16 @@
 
         </div>
     </div>
+    <script>
+function myFunction() {
+    alert("Sign Out Successfully!!!");
+}
+function back()
+{
+    window.history.forward(0)
+
+
+}
+    </script>
     </body>
 

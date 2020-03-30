@@ -6,6 +6,20 @@
 
 
 
+<style>
+    .btnRegister {
+        float: left;
+        margin-top: 10%;
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        background: #0062cc;
+        color: #fff;
+        font-weight: 600;
+        width: 50%;
+        cursor: pointer;
+    }
+</style>
 
 <html>
 <head>
@@ -50,15 +64,26 @@
                             {
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                 <div class="form-group">
-                                    <label>UserName </label> @Html.TextBoxFor(x => x.adminname, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.adminname, "", new { @class = "text-danger" })
+                                    <label>Email </label> @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
-                                    <label>Password </label> @Html.PasswordFor(x => x.pass, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.pass, "", new { @class = "text-danger" })
+                                    <label>Password </label> @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                                <label>
+                                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                                </label>
+
+
+                                <div class="container" style="background-color:#f1f1f1">
+                                    <div class="container signin">
+                                        <p>Not Register Yet? <a href="~/Register/Register">Register here</a>.</p>
+                                    </div>
                                 </div>
                                 <div style="align-self:auto">
-                                    <input type="submit" class="btnRegister"  value="Login" />
+                                    <input type="submit" class="btnRegister" value="Sign Up" />
+                                    <input type="submit" class="btnRegister" href="~/Home/HomePage" value="Sign Out" />
                                 </div>
                             }
                         </div>

@@ -23,6 +23,20 @@
             <h3>Welcome</h3>
             <p>Booking HERE</p>
 
+            <style>
+                .btnRegister {
+                    float: left;
+                    margin-top: 10%;
+                    border: none;
+                    border-radius: 1.5rem;
+                    padding: 2%;
+                    background: #0062cc;
+                    color: #fff;
+                    font-weight: 600;
+                    width: 20%;
+                    cursor: pointer;
+                }
+            </style>
 
 
         </div>
@@ -58,10 +72,11 @@
                                     <label>RoomType</label> @Html.TextBoxFor(x => x.roomtype, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.roomtype, "", new { @class = "text-danger" })
                                 </div>
-
-                                <div class="form-group">
+                                                                <div class="form-group">
                                     <label>CheckIn</label>
-                                    @Html.TextBoxFor(x => x.checkin, new { @class = "form-control" })
+
+
+                                    @Html.TextBoxFor(x => x.checkin, new { @class = "datepicker", @type = "date" })
                                     @Html.ValidationMessageFor(model => model.checkin, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group">
@@ -72,7 +87,7 @@
                                 </div>
 
                                 <div>
-                                    <input class="btn btn-success" type="submit" value="Booking" />
+                                    <input type="submit" class="btnRegister" value="Sign Up" />
                                 </div>
                             </div>
 

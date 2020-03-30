@@ -1,0 +1,79 @@
+﻿@model IEnumerable<WebApplication2.Models.Booking>
+
+@{
+    ViewBag.Title = "Search1";
+}
+
+<h2>Search</h2>
+
+
+<p>
+
+
+
+
+    @using (Html.BeginForm("Search", "Bookings", FormMethod.Get))
+    {
+        <b> Search by</b> @Html.RadioButton("option", "roomtype", true)<b> roomtype</b>
+        @Html.RadioButton("option", "checkin") <b> CheckIn</b><br />
+        @Html.TextBox("search") <input type="submit" value="Search" />
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().roomtype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().checkin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().noofnight)
+        </th>
+
+    </tr>
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="5">
+                No record found
+            </td>
+        </tr>
+
+
+
+
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.roomtype)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.checkin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.noofnight)
+                </td>
+              
+            </tr>
+        }
+
+
+    }
+</table>

@@ -15,15 +15,13 @@ namespace WebApplication2.Models
 
 
 
-        public ProjectContext() : base("hotelmanagment451") { }
+        public ProjectContext() : base("UserEntities5") { }
 
 
 
         // public DbSet<Login> Login { get; set; }
 
-
-
-
+            
 
 
 

@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Register";
+
 }
 
 
@@ -39,22 +40,24 @@
                                 <div class="col-md-6">
                                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                     <div class="form-group">
-                                        <label>UserName </label> @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                        <label>Email </label> @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="form-group">
-                                        <label>First Name </label> @Html.TextBoxFor(x => x.FName, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.FName, "", new { @class = "text-danger" })
+                                        
+                                        <label>Password </label> @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    
                                     </div>
                                     <div class="form-group">
-                                        <label>Last Name </label> @Html.TextBoxFor(x => x.LName, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.LName, "", new { @class = "text-danger" })
+                                        <label>First Name </label> @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        <label>Last Name</label>
+                                        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="form-group">
                                         <label>Id Proof</label>
@@ -77,15 +80,9 @@
                                         @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                                     </div>
 
-                                    <div class="form-group">
-                                        <label>Password </label> @Html.TextBoxFor(x => x.Pass, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })
-                                    </div>
+                                   
 
-                                    <div class="form-group">
-                                        <label>Confirm Password </label> @Html.TextBoxFor(x => x.ConfPass, new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.ConfPass, "", new { @class = "text-danger" })
-                                    </div>
+                                    
 
                                 </div>
                                 <div>

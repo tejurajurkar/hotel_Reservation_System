@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using WebApplication2.Models;
 
 
@@ -21,217 +22,190 @@ namespace WebApplication2.Controllers
 
         private ProjectContext db = new ProjectContext();
 
-        // GET: Register
+        
 
-        public ActionResult Register()
 
+        public ActionResult Index()
         {
-
             return View();
-
         }
 
 
-
+        [HttpGet]
         public ActionResult Login()
-
         {
-
             return View();
-
         }
 
-
-
-
-
-
-
         [HttpPost]
-
-        public ViewResult Register(Register guestResponse)
-
+        public ActionResult Login(Register userr)
         {
-
-            if (ModelState.IsValid)
-
+            //if (ModelState.IsValid)  
+            //{  
+            if (IsValid(userr.Email, userr.Password))
             {
-
-                using (var context = new ProjectContext())
-
-                {
-
-                    context.Registrations.Add(guestResponse);
-
-                    context.SaveChanges();
-
-                }
-
-                return View("Login", guestResponse);
-
+                FormsAuthentication.SetAuthCookie(userr.Email, false);
+                return RedirectToAction("Search1", "Bookings");
             }
-
             else
-
             {
-
-                return View();
-
+                ModelState.AddModelError("", "Login details are wrong.");
             }
-
-
-
+            return View(userr);
         }
 
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
 
 
 
 
         [HttpPost]
-
-        [ValidateAntiForgeryToken]
-
-        public ActionResult Login(Register objUser)
-
+        public ActionResult Register(Register user)
         {
 
             if (ModelState.IsValid)
-
             {
-
-                using (var context = new ProjectContext())
-
+                using (var db = new ProjectContext())
                 {
+                    var crypto = new SimpleCrypto.PBKDF2();
+                    var encrypPass = crypto.Compute(user.Password);
+                    var newUser = db.Registrations.Create();
+                    newUser.Email = user.Email;
+                    newUser.Password = encrypPass;
+                    newUser.PasswordSalt = crypto.Salt;
+                    newUser.FirstName = user.FirstName;
+                    newUser.LastName = user.LastName;
+                    newUser.UserType = "User";
+                    newUser.CreatedDate = DateTime.Now;
+                    newUser.IsActive = true;
+                    newUser.IPAddress = "642 White Hague Avenue";
+                    newUser.ValidId = user.ValidId;
+                    newUser.Phone = user.Phone;
+                    newUser.Address = user.Address;
+                    db.Registrations.Add(newUser);
 
-                    var obj = context.Registrations.Where(a => a.UserName.Equals(objUser.UserName)
-
-                    && a.Pass.Equals(objUser.Pass)).FirstOrDefault();
-
-                    if (obj != null)
-
-                    {
-
-                        Session["UserID"] = obj.ID.ToString();
-
-                        Session["UserName"] = obj.Pass.ToString();
-
-                        return RedirectToAction("Register");
-
-                    }
+                    db.SaveChanges();
+                    return RedirectToAction("Login", "Register");
 
                 }
 
             }
+            else
+            {
+                ModelState.AddModelError("", "Data is not correct");
+            }
 
-            return View(objUser);
-
+   
+         return View();
         }
 
-        public ActionResult adminregister()
-
+        public ActionResult LogOut()
         {
-
-            return View();
-
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Register");
         }
 
+        private bool IsValid(string email, string password)
+        {
+            var crypto = new SimpleCrypto.PBKDF2();
+            bool IsValid = false;
+
+            using (var db = new ProjectContext())
+            {
+                var user = db.Registrations.FirstOrDefault(u => u.Email == email);
+                if (user != null)
+                {
+                    if (user.Password == crypto.Compute(password, user.PasswordSalt))
+                    {
+                        IsValid = true;
+                    }
+                }
+            }
+            return IsValid;
+        }
+
+
+
+
+
+        [HttpGet]
         public ActionResult AdminLogin()
-
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdminLogin(admin userr)
+        {
+            //if (ModelState.IsValid)  
+            //{  
+            if (IsValid(userr.Email, userr.Password))
+            {
+                FormsAuthentication.SetAuthCookie(userr.Email, false);
+                return RedirectToAction("Search", "Bookings");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Login details are wrong.");
+            }
+            return View(userr);
+        }
+
+
+
+
+        [HttpGet]
+        public ActionResult adminregister()
+        {
+            return View();
+        }
+
+
+
+
+        [HttpPost]
+        public ActionResult adminregister(admin user)
+        {
+
+            if (ModelState.IsValid)
+            {
+                using (var db = new ProjectContext())
+                {
+                    var crypto = new SimpleCrypto.PBKDF2();
+                    var encrypPass = crypto.Compute(user.Password);
+                    var newUser = db.Registrations.Create();
+                    newUser.Email = user.Email;
+                    newUser.Password = encrypPass;
+                    newUser.PasswordSalt = crypto.Salt;
+                    newUser.FirstName = user.FirstName;
+                    newUser.LastName = user.LastName;
+                    newUser.UserType = "User";
+                    newUser.CreatedDate = DateTime.Now;
+                    newUser.IsActive = true;
+                    newUser.IPAddress = "642 White Hague Avenue";
+                    newUser.ValidId = user.ValidId;
+                    newUser.Phone = user.Phone;
+                    newUser.Address = user.Address;
+                    db.Registrations.Add(newUser);
+
+                    db.SaveChanges();
+                    return RedirectToAction("AdminLogin", "Register");
+
+                }
+
+            }
+            else
+            {
+                ModelState.AddModelError("", "Data is not correct");
+            }
+
 
             return View();
-
         }
-
-
-
-        [HttpPost]
-
-        public ViewResult adminregister(admin an)
-
-        {
-
-            if (ModelState.IsValid)
-
-            {
-
-                using (var context = new ProjectContext())
-
-                {
-
-                    context.Admin.Add(an);
-
-                    context.SaveChanges();
-
-                }
-
-                return View("AdminLogin", an);
-
-            }
-
-            else
-
-            {
-
-                return View();
-
-            }
-
-
-
-        }
-
-
-
-
-
-        [HttpPost]
-
-        [ValidateAntiForgeryToken]
-
-        public ActionResult AdminLogin(admin objUser)
-
-        {
-
-            if (ModelState.IsValid)
-
-            {
-
-                using (var context = new ProjectContext())
-
-                {
-
-                    var obj = context.Admin.Where(a => a.adminname.Equals(objUser.adminname)
-
-                    && a.pass.Equals(objUser.pass)).FirstOrDefault();
-
-                    if (obj != null)
-
-                    {
-
-                        Session["UserID"] = obj.adminid.ToString();
-
-                        Session["UserName"] = obj.pass.ToString();
-
-                        return RedirectToAction("adminregister");
-
-                    }
-
-                }
-
-            }
-
-            return View(objUser);
-
-        }
-
-
-
-
-
-
-
-
 
     }
 

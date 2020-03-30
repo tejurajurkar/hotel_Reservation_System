@@ -35,5 +35,6 @@ E:\WebApplication2\WebApplication2\bin\System.Web.Mvc.xml
 E:\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
 E:\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 E:\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
-E:\WebApplication2\WebApplication2\obj\Debug\WebApplication2.Migrations.projectcontext.resources
+E:\WebApplication2\WebApplication2\bin\SimpleCrypto.dll
+E:\WebApplication2\WebApplication2\obj\Debug\WebApplication2.Migrations.aa.resources
 E:\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csproj.GenerateResource.Cache
