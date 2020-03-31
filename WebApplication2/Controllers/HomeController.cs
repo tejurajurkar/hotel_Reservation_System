@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 
 
-namespace WebApplication2.Controllers
+namespace Hotel_Reservation_SystemProject.Controllers
 {
 
     public class HomeController : Controller

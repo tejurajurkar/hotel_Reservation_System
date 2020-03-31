@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-namespace WebApplication2.Models
+namespace Hotel_Reservation_SystemProject.Models
 {
     public partial  class Register
     {

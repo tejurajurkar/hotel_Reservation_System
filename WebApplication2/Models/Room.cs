@@ -7,7 +7,7 @@ using System.Linq;
 
 using System.Web;
 
-namespace WebApplication2.Models
+namespace Hotel_Reservation_SystemProject.Models
 {
     public class Room
 

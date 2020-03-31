@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication2.Models.Booking>
+﻿@model IEnumerable<Hotel_Reservation_SystemProject.Models.Booking>
 
 @{
     ViewBag.Title = "Search1";
@@ -7,73 +7,97 @@
 <h2>Search</h2>
 
 
-<p>
-
-
-
-
-    @using (Html.BeginForm("Search", "Bookings", FormMethod.Get))
-    {
-        <b> Search by</b> @Html.RadioButton("option", "roomtype", true)<b> roomtype</b>
-        @Html.RadioButton("option", "checkin") <b> CheckIn</b><br />
-        @Html.TextBox("search") <input type="submit" value="Search" />
+<style>
+     .btnRegister {
+        
+       
+        border: none;
+        border-radius: 1rem;
+        background: #0062cc;
+        color: #fff;
+        font-weight:100;
+        width: 10%;
+        height:25px;
+        cursor: pointer;
     }
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.First().Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.First().Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.First().roomtype)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.First().checkin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.First().noofnight)
-        </th>
+</style>
 
-    </tr>
-    @if (Model.Count() == 0)
-    {
+
+    <p>
+
+
+
+
+        @using (Html.BeginForm("Search", "Bookings", FormMethod.Get))
+        {
+            <b> Search by</b> @Html.RadioButton("option", "roomtype", true)<b> roomtype</b>
+            @Html.RadioButton("option", "checkin") <b> CheckIn</b><br />
+            @Html.TextBox("search") <input type="submit"class="btnRegister " value="Search" />
+        }
+    </p>
+    <table class="table">
         <tr>
-            <td colspan="5">
-                No record found
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().roomtype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().checkin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().noofnight)
+            </th>
+
         </tr>
-
-
-
-
-    }
-    else
-    {
-        foreach (var item in Model)
+        @if (Model.Count() == 0)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                <td colspan="5">
+                    No record found
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.roomtype)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.checkin)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.noofnight)
-                </td>
-              
             </tr>
+
+
+
+
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.roomtype)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.checkin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.noofnight)
+                    </td>
+
+                </tr>
+            }
+
+
         }
 
 
-    }
-</table>
+    </table>
+
+ <div>
+     <div class="container signin">
+         <p>Do you want to Book Room? <a href="booking">Book Now</a>.</p>
+     </div>
+ </div>

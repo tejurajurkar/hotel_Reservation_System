@@ -1,9 +1,9 @@
-namespace WebApplication2.Migrations
+namespace Hotel_Reservation_SystemProject.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class aa : DbMigration
+    public partial class hh : DbMigration
     {
         public override void Up()
         {

@@ -1,18 +1,18 @@
-namespace WebApplication2.Migrations
+namespace Hotel_Reservation_SystemProject.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<WebApplication2.Models.ProjectContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Hotel_Reservation_SystemProject.Models.ProjectContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(WebApplication2.Models.ProjectContext context)
+        protected override void Seed(Hotel_Reservation_SystemProject.Models.ProjectContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using WebApplication2.Models;
+using Hotel_Reservation_SystemProject.Models;
 
 
 
@@ -12,7 +12,7 @@ using WebApplication2.Models;
 
 
 
-namespace WebApplication2.Controllers
+namespace Hotel_Reservation_SystemProject.Controllers
 
 {
 
@@ -106,7 +106,7 @@ namespace WebApplication2.Controllers
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Register");
+            return RedirectToAction("LogOut", "Register");
         }
 
         private bool IsValid(string email, string password)

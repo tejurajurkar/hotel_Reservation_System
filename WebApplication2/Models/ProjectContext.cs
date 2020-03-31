@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using System.Collections;
 
-namespace WebApplication2.Models
+namespace Hotel_Reservation_SystemProject.Models
 {
     public class ProjectContext : DbContext
 
@@ -15,7 +15,7 @@ namespace WebApplication2.Models
 
 
 
-        public ProjectContext() : base("UserEntities5") { }
+        public ProjectContext() : base("UserEntities6") { }
 
 
 

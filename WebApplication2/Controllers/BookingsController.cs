@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication2.Models;
+using Hotel_Reservation_SystemProject.Models;
 
-namespace WebApplication2.Controllers
+namespace Hotel_Reservation_SystemProject.Controllers
 {
     public class BookingsController : Controller
     {
@@ -22,6 +22,13 @@ namespace WebApplication2.Controllers
 
         [HttpGet]
         public ActionResult booking()
+
+        {
+
+            return View();
+
+        }
+        public ActionResult CashPay()
 
         {
 

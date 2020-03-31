@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "CashPay";
+}
+
+
+
+<p id="msg"></p>
+
+<script>
+		 var userPreference;
+
+		if (confirm("Do u want to confirm booking?") == true) {
+			userPreference = "Booking Confrmed!!!!";
+		} else {
+			userPreference = "Booking Canceled!";
+		}
+
+		document.getElementById("msg").innerHTML = userPreference;
+
+</script>

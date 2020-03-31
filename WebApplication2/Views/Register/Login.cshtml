@@ -1,4 +1,4 @@
-﻿@model WebApplication2.Models.Register
+﻿@model Hotel_Reservation_SystemProject.Models.Register
 @{
 
 
@@ -44,7 +44,7 @@
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="AdminLogin" role="tab" aria-controls="profile" aria-selected="false">Admin</a>
+                        <a class="nav-link  " href="AdminLogin" role="tab" aria-controls="profile" aria-selected="false">Admin</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -56,6 +56,7 @@
                             {
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                 <div class="form-group">
+
                                     <label>Email </label> @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
@@ -70,7 +71,7 @@
 
   <div class="container" style="background-color:#f1f1f1">
       <div class="container signin">
-          <p>Not Register Yet? <a href="~/Register/Register">Register here</a>.</p>
+          <p>Create new Account? <a href="~/Register/Register">Register here</a>.</p>
       </div>
   </div>
                                 <div class="form-group">
@@ -92,7 +93,7 @@ function myFunction() {
 }
 function back()
 {
-    window.history.forward(0)
+    window.history.forward(25);
 
 
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication2.Models.Booking>
+﻿@model IEnumerable<Hotel_Reservation_SystemProject.Models.Booking>
 
 @{
     ViewBag.Title = "Search";
@@ -6,19 +6,32 @@
 
 <h2>Search</h2>
 
+
+<style>
+    .btnRegister {
+        
+       
+        border: none;
+        border-radius: 1rem;
+        background: #0062cc;
+        color: #fff;
+        font-weight:100;
+        width: 10%;
+        height:25px;
+        cursor: pointer;
+    }
+</style>
+
 <p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<p>
+
 
     
-
-  
 @using (Html.BeginForm("Search", "Bookings", FormMethod.Get))
 {
+
     <b> Search by</b> @Html.RadioButton("option", "roomtype", true)<b> roomtype</b>
     @Html.RadioButton("option", "Email") <b> CheckIn</b><br />
-    @Html.TextBox("search") <input type="submit" value="Search" />
+    @Html.TextBox("search") <input type="submit" class="btnRegister " value="Search" />
 }</p>
 <table class="table">
     <tr>
@@ -82,3 +95,8 @@ else
 
 }
 </table>
+<div>
+    <div class="container signin">
+        <p>Do you want to Book Room? <a href="booking">Book Now</a>.</p>
+    </div>
+</div>
