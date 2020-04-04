@@ -1,0 +1,176 @@
+﻿@model Hotel_Reservation_SystemProject.Controllers.MainController
+
+@{
+    ViewBag.Title = "Facilities";
+}
+
+@{
+    Html.RenderPartial("~/Views/Main/main.cshtml");
+}
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <style>
+               /* col-xs-6 can become col-xs-4 for wider media
+        * used flex as selector after trying flex boxes so I left the
+        * name - just in case you were wondering
+         */
+               #flex {
+                   padding-left: 35px;
+                   background: #fefefe;
+               }
+
+               .flex-container {
+                   box-sizing: border-box;
+                   padding: 0px;
+                   width: 100%;
+                   margin: 0 auto;
+                   list-style: none;
+               }
+
+               .flex-item {
+                   background: #fafafa;
+                   padding: 5px;
+                   width: 250px;
+                   max-height: 150px;
+                   margin-top: 10px;
+                   line-height: 1.45;
+                   color: inherit;
+                   font-size: inherit;
+                   text-align: center;
+                   margin-right: 2px;
+                   overflow: hidden;
+               }
+
+                   .flex-item img {
+                       max-height: 150px;
+                       padding: 0;
+                   }
+
+                   .flex-item:last-child {
+                       margin-right: 0;
+                   }
+
+               #flex li p {
+                   background: #f6f6f6;
+                   border: 1px solid #ccc;
+                   border-radius: 4px;
+                   height: 144px;
+                   padding: 15px;
+                   font-weight: lighter;
+                   text-align: left;
+                   font-size: 1em;
+                   box-shadow: 0 .5px .5px #eee;
+                   text-transform: uppercase;
+               }
+
+               #flex p a {
+               }
+
+               .btn-labeled-left .btn-label {
+                   position: relative;
+                   left: -12px;
+                   padding: 6px 12px 6px 0;
+                   border-right: 1px solid #fff;
+               }
+
+               .btn-labeled-right .btn-label {
+                   position: relative;
+                   right: -12px;
+                   padding: 6px 0 6px 12px;
+                   border-left: 1px solid #fff;
+               }
+
+               .btn-labeled-left {
+                   min-width: 160px;
+                   min-height: 24px;
+                   line-height: 30px;
+                   margin: 0 auto -80px auto;
+                   padding-left: 0;
+                   padding-top: 0;
+                   padding-bottom: 0;
+               }
+
+               .btn-labeled-right {
+                   min-width: 160px;
+                   min-height: 24px;
+                   line-height: 30px;
+                   margin: 0 auto -80px auto;
+                   padding-left: 0;
+                   padding-top: 0;
+                   padding-bottom: 0;
+               }
+
+               .btn-label i {
+               }
+
+               .btn-labeled-left.btn-gradient,
+               .btn-labeled-right.btn-gradient,
+               .btn-gradient {
+                   border: 1px solid #ddd;
+                   background-image: linear-gradient(#eaeaea, #fafafa, #e3e3e3) !important;
+               }
+    </style>
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<div id="flex" class="container-fluid">
+    <div class="row">
+        <ul class="flex-container">
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <img src="~/Image/Spa.jpg" alt="vinyl fence">
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <p>
+                    Spa
+                </p>
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <img src="~/Image/Swimming.jpg" alt="vinyl fence">
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <p>
+                    Swimmimg pool<br>
+                </p>
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <img src="~/Image/banquet.jpg" alt="vinyl fence">
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <p>
+                    Banquet hall.<br>
+                </p>
+            </li>
+
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <p>
+                    Conference Room
+                </p>
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <img src="~/Image/conference.jpeg" alt="vinyl fence">
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <p>
+                    Private Dininig Hall
+                </p>
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <img src="~/Image/dininng.jpg" alt="vinyl fence">
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <p>
+                    Fitness Gym
+                </p>
+
+            </li>
+            <li class="flex-item col-xs-12 col-sm-3 col-lg-2">
+                <img src="~/Image/fit.jpg" alt="vinyl fence">
+            </li>
+        </ul>
+    </div>
+</div>
+

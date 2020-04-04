@@ -114,13 +114,67 @@
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Image\American.jpg" />
+    <Content Include="Image\banquet.jpg" />
+    <Content Include="Image\barbeque.jpg" />
+    <Content Include="Image\beverages.jpeg" />
     <Content Include="Image\BG.jpg" />
     <Content Include="Image\BG1.jpg" />
+    <Content Include="Image\burger.jpg" />
+    <Content Include="Image\c1.jpg" />
+    <Content Include="Image\c2.jpg" />
+    <Content Include="Image\c3.jpg" />
+    <Content Include="Image\chaat.jpg" />
+    <Content Include="Image\check.png" />
+    <Content Include="Image\chorizo.jpg" />
+    <Content Include="Image\conference.jpeg" />
+    <Content Include="Image\crema1.jpg" />
+    <Content Include="Image\croissants.jpg" />
+    <Content Include="Image\curries.jpg" />
+    <Content Include="Image\d1.jpg" />
+    <Content Include="Image\d2.jpg" />
+    <Content Include="Image\d3.jpg" />
+    <Content Include="Image\d4.jpg" />
+    <Content Include="Image\d5.jpg" />
+    <Content Include="Image\dininng.jpg" />
+    <Content Include="Image\European.jpg" />
+    <Content Include="Image\f1.jpg" />
+    <Content Include="Image\f2.jpg" />
+    <Content Include="Image\f3.jpg" />
+    <Content Include="Image\f4.jpg" />
+    <Content Include="Image\fajitas.jpg" />
+    <Content Include="Image\fish.jpg" />
+    <Content Include="Image\fit.jpg" />
+    <Content Include="Image\gazpzcho.jpg" />
+    <Content Include="Image\gelatos.jpg" />
+    <Content Include="Image\grilledchick.jpg" />
     <Content Include="Image\h1.jpg" />
     <Content Include="Image\h2.jpg" />
     <Content Include="Image\h3.jpg" />
+    <Content Include="Image\Indian.jpg" />
+    <Content Include="Image\Italian.jpg" />
+    <Content Include="Image\korma.jpg" />
+    <Content Include="Image\lasangna.jpg" />
     <Content Include="Image\mas.jpg" />
+    <Content Include="Image\meat.png" />
+    <Content Include="Image\Mexican.jpg" />
     <Content Include="Image\OIP.jpg" />
+    <Content Include="Image\Paprika.jpg" />
+    <Content Include="Image\pasta.jpg" />
+    <Content Include="Image\pie.jpg" />
+    <Content Include="Image\pizza.jpg" />
+    <Content Include="Image\s1.jpg" />
+    <Content Include="Image\s2.jpg" />
+    <Content Include="Image\s3.jpg" />
+    <Content Include="Image\s4.jpg" />
+    <Content Include="Image\sausage.jpg" />
+    <Content Include="Image\seafood.jpg" />
+    <Content Include="Image\Spa.jpg" />
+    <Content Include="Image\Spanish.jpg" />
+    <Content Include="Image\stew.jpg" />
+    <Content Include="Image\strudel.jpg" />
+    <Content Include="Image\sweet.jpg" />
+    <Content Include="Image\Swimming.jpg" />
     <Content Include="Image\t1.jpg" />
     <Content Include="Image\t2.jpg" />
     <Content Include="Image\t3.jpg" />
@@ -130,9 +184,13 @@
     <Content Include="Image\t7.jpg" />
     <Content Include="Image\t8.png" />
     <Content Include="Image\t9.jpg" />
+    <Content Include="Image\taco.jpg" />
+    <Content Include="Image\tandoori.jpg" />
+    <Content Include="Image\waffles.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Image\c3.webp" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,7 +233,7 @@
     <Compile Include="Models\ProjectContext.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="Models\Room.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\App_Data\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -203,6 +261,9 @@
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Register\LogOut.cshtml" />
     <Content Include="Views\Bookings\CashPay.cshtml" />
+    <Content Include="Views\Home\Rooms.cshtml" />
+    <Content Include="Views\Home\Food.cshtml" />
+    <Content Include="Views\Home\Facilities.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -213,7 +274,6 @@
   <ItemGroup>
     <Folder Include="Content\css\" />
     <Folder Include="Content\js\" />
-    <Folder Include="Properties\App_Data\" />
     <Folder Include="vendor\" />
   </ItemGroup>
   <ItemGroup>

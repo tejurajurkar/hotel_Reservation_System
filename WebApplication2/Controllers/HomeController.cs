@@ -43,7 +43,29 @@ namespace Hotel_Reservation_SystemProject.Controllers
             return View();
 
         }
+        public ActionResult Rooms()
+
+        {
+
+            return View();
+
+        }
+
+        public ActionResult Food()
+
+        {
+
+            return View();
+
+        }
+
+        public ActionResult Facilities()
+        {
+            return View();
+        }
 
     }
 
+
 }
+

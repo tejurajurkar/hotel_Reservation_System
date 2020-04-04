@@ -1,0 +1,317 @@
+﻿@model Hotel_Reservation_SystemProject.Controllers.MainController
+
+@{
+    ViewBag.Title = "Food";
+}
+
+@{
+    Html.RenderPartial("~/Views/Main/main.cshtml");
+}
+
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    <style>
+        #custom_carousel .controls a small {
+            font-size: 1em !important;
+        }
+
+        #menu {
+            font-family: serif;
+        }
+
+        .carousel-inner {
+            overflow: visible;
+        }
+
+        #custom_carousel .item {
+            height: auto;
+            color: #000;
+            background-color: #f1f1f1;
+            padding: 10px 0;
+            overflow: visible;
+        }
+
+        #custom_carousel .controls {
+            overflow-x: visible;
+            overflow-y: visible;
+            padding: 0;
+            margin: 0;
+            white-space: nowrap;
+            text-align: center;
+            position: relative;
+            background: #ddd;
+        }
+
+            #custom_carousel .controls li {
+                display: table-cell;
+                width: 1%;
+                max-width: 90px;
+            }
+
+                #custom_carousel .controls li.active {
+                    background-color: #eee;
+                    border-top: 2px solid #ac1114;
+                }
+
+            #custom_carousel .controls a small {
+                overflow: hidden;
+                display: block;
+                font-size: 10px;
+                margin-top: 5px;
+                font-weight: bold;
+            }
+    </style>
+    <script>
+        $(document).ready(function (ev) {
+            $('#custom_carousel').on('slide.bs.carousel', function (evt) {
+                $('#custom_carousel .controls li.active').removeClass('active');
+                $('#custom_carousel .controls li:eq(' + $(evt.relatedTarget).index() + ')').addClass('active');
+            })
+        });
+    </script>
+</head>
+
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+<div class="container-fluid">
+    <div id="custom_carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <div class="controls">
+            <ul class="nav">
+                <li data-target="#custom_carousel" data-slide-to="0" class="active"><a href="#"><img src="~/Image/Indian.jpg"><small>Indian</small></a></li>
+                <li data-target="#custom_carousel" data-slide-to="1"><a href="#"><img src="~/Image/Italian.jpg"><small>Italian</small></a></li>
+                <li data-target="#custom_carousel" data-slide-to="2"><a href="#"><img src="~/Image/Mexican.jpg"><small>Mexican</small></a></li>
+                <li data-target="#custom_carousel" data-slide-to="3"><a href="#"><img src="~/Image/American.jpg"><small>American</small></a></li>
+                <li data-target="#custom_carousel" data-slide-to="4"><a href="#"><img src="~/Image/Spanish.jpg"><small>Spanish </small></a></li>
+                <li data-target="#custom_carousel" data-slide-to="5"><a href="#"><img src="~/Image/European.jpg"><small>Europian</small></a></li>
+                <li data-target="#custom_carousel" data-slide-to="6"><a href="#"><img src="~/Image/meat.png"><small>Meat</small></a></li>
+            </ul>
+        </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/chaat.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Chaat</h2>
+                            <h4>Try our savoury snacks at our chaat corner.  </h4>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/beverages.jpeg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Beverages</h2>
+                            <h4>
+                                Presenting a wide variety of traditional and exotic indian beverages.Available in different regional
+                                flavours.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/curries.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Curry </h2>
+                            <h4>
+                                Warm summer’s day or a chilly winter’s night there’s an Indian curry recipe for all seasons.
+                                Try our auuthentic regional range of curries
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/sweet.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Sweets</h2>
+                            <h4>Check out the most popular Indian sweets that have a legendary status.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Italian -------------------------------------------------------------------->
+            <div class="item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/pizza.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Pizza </h2>
+                            <h4>Savory dish of Italian origin.Try our wide range of pizzas.</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/lasangna.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Lasangna</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/pasta.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Pasta</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/gelatos.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Gelatos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Mexican-------------------------------------------------------------------------------------------->
+            <div class="item">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/taco.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Mexican Taco</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/fajitas.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Fajitas</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--American-------------------------------------------------------------------------------------------->
+            <div class="item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/barbeque.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Barbeque</h2>
+                            <h4>Enjoy the tasty veg and N0n-veg barbeques.</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/pie.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Pie</h2>
+                            <h4>Fully baked and fried flavoured pies.</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/burger.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Burger</h2>
+                            <h4>Different sizes of burgers with extra slicing. </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/sausage.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Sausage Gravy</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Spanish-->
+            <div class="item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/chorizo.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Chorizo	</h2>
+                            <h4>Highly seasoned chopped and ground pork sausage used in Spanish </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/crema1.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Crema Catalano</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/gazpzcho.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Gazpacho</h2>
+                            <h4>Cold soup made of raw,vegetables. A classic blended Spanish cuisine</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- European-------------------------------------------------------------------------------------------->
+            <div class="item">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/waffles.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Waffles</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/strudel.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Strudel</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/croissants.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Croissants</h2>
+                            <h4>Tasty buttery, flaky, viennoiserie pastry </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/stew.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Irish Stew</h2>
+                            <h4>Native Lamb and root vegetable stew.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Meat-------------------------------------------------------------------------------------------------->
+            <div class="item" style="padding-bottom: 500px;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/grilledchick.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Grilled Chicken</h2>
+                            <h4>Perfectly barbecued, grilled and smoked chicken with regional preparation techniques and cooking styles.</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/korma.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Mutton Korma</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/tandoori.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Tandoori Chicken</h2>
+                            <h4>Roasteed and marinated chicken in yoghurt and spices in a tandoor.</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/fish.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Fish fingers</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><img src="~/Image/seafood.jpg" class="img-responsive"></div>
+                        <div class="col-md-9">
+                            <h2>Sea food</h2>
+                            <h4>Wide range of sea foods</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Item -->
+        </div>
+        <!-- End Carousel Inner -->
+    </div>
+    <!-- End Carousel -->
+</div>

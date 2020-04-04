@@ -1,0 +1,547 @@
+﻿@model Hotel_Reservation_SystemProject.Controllers.MainController
+
+
+@{
+    ViewBag.Title = "Rooms";
+}
+@{
+    Html.RenderPartial("~/Views/Main/main.cshtml");
+}
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        .how-section1 {
+            margin-top: -15%;
+            padding: 10%;
+        }
+
+            .how-section1 h4 {
+                color: #ffa500;
+                font-weight: bold;
+                font-size: 30px;
+            }
+
+            .how-section1 .subheading {
+                color: #3931af;
+                font-size: 20px;
+            }
+
+            .how-section1 .row {
+                margin-top: 10%;
+            }
+
+        .how-img {
+            text-align: center;
+        }
+
+            .how-img img {
+                width: 100%;
+            }
+
+
+        .rooms {
+            background: #ffffff;
+            padding-top: 100px;
+            padding-bottom: 110px;
+        }
+
+        .rooms_title h2 {
+            color: #150f24;
+            -webkit-transition: all 200ms ease;
+            -moz-transition: all 200ms ease;
+            -ms-transition: all 200ms ease;
+            -o-transition: all 200ms ease;
+            transition: all 200ms ease;
+        }
+
+        .rooms_text {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #ffffff;
+
+        }
+
+            .rooms_text p {
+                -webkit-transition: all 200ms ease;
+                -moz-transition: all 200ms ease;
+                -ms-transition: all 200ms ease;
+                -o-transition: all 200ms ease;
+                transition: all 200ms ease;
+            }
+
+        .card-special .rooms_text p {
+            color: #ff0000;
+        }
+
+        .rooms_list {
+            margin-top: 36px;
+            color:#ffffff;
+        }
+
+            .rooms_list ul li:not(:last-of-type) {
+                margin-bottom: 14px;
+            }
+
+            .rooms_list ul li img {
+                margin-right: 22px;
+            }
+
+            .rooms_list ul li span {
+                font-size: 15px;
+                font-weight: 400;
+                color: #4a4f59;
+                -webkit-transition: all 200ms ease;
+                -moz-transition: all 200ms ease;
+                -ms-transition: all 200ms ease;
+                -o-transition: all 200ms ease;
+                transition: all 200ms ease;
+            }
+
+        .card-special .rooms_list ul li span {
+            color: #ffffff;
+        }
+
+        .rooms_price {
+            margin-top: 33px;
+            font-size: 36px;
+            font-weight: 700;
+            color: #ff9000;
+            -webkit-transition: all 200ms ease;
+            -moz-transition: all 200ms ease;
+            -ms-transition: all 200ms ease;
+            -o-transition: all 200ms ease;
+            transition: all 200ms ease;
+        }
+
+        .card-special .rooms_price,
+        .card-special .rooms_price span {
+            color: #ffffff;
+        }
+
+        .rooms_price span {
+            font-size: 18px;
+            font-weight: 700;
+            color: #4a4f59;
+            margin-left: 5px;
+        }
+
+        ::selection {
+            background: #d9d9d9;
+            color: #ffffff;
+        }
+
+        p::selection {
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        h5 {
+            font-size: 14px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lato', sans-serif;
+            -webkit-font-smoothing: antialiased;
+           
+            -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+            text-shadow: rgba(0,0,0,.01) 0 0 1px;
+            line-height: 1.2;
+            margin-bottom: 0;
+        }
+
+            h1::selection,
+            h2::selection,
+            h3::selection,
+            h4::selection,
+            h5::selection,
+            h6::selection {
+            }
+
+        section {
+            display: block;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .section_title h4 {
+            position: relative;
+            font-size: 36px;
+            font-weight: 400;
+            color: #ffa500;
+            z-index: 1;
+            margin-top: -20px;
+        }
+
+        .section_title > div {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 136px;
+            font-weight: 700;
+            color: #f4f5fa;
+            line-height: 0.75;
+            z-index: 0;
+        }
+
+        .container_wrapper > .container {
+            max-width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+            .container_wrapper > .container > .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+                .container_wrapper > .container > .row > div[class^='col'] {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+    </style>
+
+</head>
+<!------ Include the above in your HEAD tag ---------->
+<div class="how-section1">
+    <div class="row">
+        <div class="col-md-6 how-img">
+            <div class="container">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+
+
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" style="align-content:center">
+                        <div class="item active">
+                            <img src="~/Image/c1.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/Image/c2.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/Image/c3.jpg">
+                        </div>
+
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <div class="rooms_left_content">
+                <div class="section_title">
+
+                    <h4><i>Classic Rooms</i></h4>
+                </div>
+                <div class="rooms_text">
+                    <p>
+                        Comfortable room decorated in pastel tones. Standard rooms are equipped with
+                        shower or bathtub and some of them with balcony overlooking hotel garden.
+                        Each room is air conditioned and has a flat-screen TV with international TV channels,
+                        cozy king size bed and spacious wardrobe..
+                    </p>
+                </div>
+                <div class="rooms_list">
+                    <ul>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Best Price Room</span>
+                        </li>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Room for up to two persons</span>
+                        </li>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Free Room service</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rooms_price">₹1000/<span>Night</span></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="rooms_left_content">
+                <div class="section_title">
+
+                    <h4><i>Family Rooms</i></h4>
+                </div>
+                <div class="rooms_text">
+                    <p>
+                        Comfortable family rooms to occupy your family members.Rooms equipped with
+                        Double or tripple beds,extra childsize bathrooms.
+                        Each room is air conditioned and closer to playing areas.Provided with complimentary baby gear, omplimentary
+                        chocolate chip cookies at bedtime.
+                    </p>
+                </div>
+                <div class="rooms_list">
+                    <ul>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Spacious family rooms</span>
+                        </li>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Room for up to 4-6 Guests</span>
+                        </li>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+
+                            <span>Treats for children</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rooms_price">₹3000/<span>Night</span></div>
+
+            </div>
+        </div>
+        <div class="col-md-6 how-img">
+            <div class="container">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+
+
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" style="align-content:center">
+                        <div class="item active">
+                            <img src="~/Image/f1.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/Image/f3.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/Image/f4.jpg">
+                        </div>
+
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 how-img">
+            <div class="container">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+
+
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" style="align-content:center">
+                        <div class="item active">
+                            <img src="~/Image/d1.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/Image/d2.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/Image/d3.jpg">
+                        </div>
+
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <div class="rooms_left_content">
+                <div class="section_title">
+
+                    <h4><i>Deluxe Rooms</i></h4>
+                </div>
+                <div class="rooms_text">
+                    <p>
+                        Designed to maximise the sense of spaciousness, the Deluxe Suites are tastefully
+                        adorned in colours Offering its guests a world of comfort, elegance, hospitality
+                        and a taste of luxury, the elegant Deluxe Suite come with a sitting area in addition
+                        to the comfortable bedroom area. With warm interiors of vibrant Indian colours,
+                        the Deluxe Suites showcase Indian craftsmanship in the details of the woodwork,
+                        rich fabric and handmade customized appointments.
+
+                        Offering a world of comfort, elegance, hospitality and a taste of luxury the Deluxe
+                        Suites include spacious living room, bedroom and bathroom, all compartmentalized by
+                        sliding doors, thus ensuring privacy and yet providing the atmospherics of an elegantly
+                        appointed residence. Coming with a sitting room in addition to the comfortable bedroom area.
+
+                    </p>
+                </div>
+                <div class="rooms_list">
+                    <ul>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>
+                                24 hour service of a retreat host (butler)
+                            </span>
+                        </li>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Access to exclusive lounge facility </span>
+                        </li>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Complementry Breakfast and Drinks</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rooms_price">₹5500/<span>Night</span></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="rooms_left_content">
+                <div class="section_title">
+
+                    <h4><i>Presidental Suite</i></h4>
+                </div>
+                <div class="rooms_text">
+                    <p>
+                        The Presidential Experience, amongst others privileges, comes complete with an exclusive
+                        entrance to the Hotel, supported by dedicated elevators, private parking and round-the-clock
+                        security, to ensure that the affairs of the state can be conducted in complete secrecy, privacy
+                        and a secure environment.
+
+
+
+                        The majestic Presidential Suite, with plush interiors include a Private Dining Room, attached Kitchenette,
+                        an opulent Sitting Room, Study Area, well- appointed spacious bathrooms and a private roof top Garden
+                        expressing a fittingly elegant confluence of royal Indian sensibilities with international standards of refined luxury.
+                        Recreating an ambience of regal luxury befitting the indulgence of the distinguished guests,
+                        the Presidential Suites display exquisite interiors and traditional artefacts with excellent services.
+                    </p>
+                </div>
+                <div class="rooms_list">
+                    <ul>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Airport pick up/span>
+                        </li>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Complimentary planned meal</span>
+                        </li>
+                        <li class="d-flex flex-row align-items-center justify-content-start">
+                            <img src="~/Image/check.png" alt="">
+                            <span>Access to the fitness centre and swimming pool.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rooms_price">₹10000/<span>Night</span></div>
+
+            </div>
+        </div>
+        <div class="col-md-6 how-img">
+            <div class="container">
+
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+
+
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" style="align-content:center">
+                        <div class="item active">
+                            <img src="~/Image/s2.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/Image/s4.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/Image/d5.jpg">
+                        </div>
+
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
